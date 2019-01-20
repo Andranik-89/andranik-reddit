@@ -1,7 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { AboutComponent } from './about/about.component';
+import { ArticleListComponent } from './article-list/article-list.component';
+
+const routes: Routes = [
+    {
+        path: '', redirectTo: 'news/reddit-r-all',
+        pathMatch: 'full'
+    },
+    {
+        path: 'about',
+        component: AboutComponent
+    },
+    {
+        path: 'news/:sourceKey',
+        component: ArticleListComponent
+    }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
